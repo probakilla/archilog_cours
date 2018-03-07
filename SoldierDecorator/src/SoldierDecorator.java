@@ -19,4 +19,16 @@ public class SoldierDecorator implements Soldier
 	{
 		_soldier.parry(power);
 	}
+	
+	@Override
+	public void displayHealth ()
+	{
+		_soldier.displayHealth();
+	}
+	
+	@Override
+	public boolean isAlive ()
+	{
+		return _soldier.isAlive();
+	}
 }
