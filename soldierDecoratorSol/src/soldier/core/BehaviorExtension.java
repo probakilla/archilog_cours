@@ -1,50 +1,71 @@
 package soldier.core;
 
-public class BehaviorExtension implements BehaviorSoldier {
-	
-	BehaviorSoldier soldier;
+import equipement.core.*;
 
-	BehaviorExtension(BehaviorSoldier s) {
+public class BehaviorExtension implements BehaviorSoldier 
+{
+	
+	public BehaviorSoldier soldier;
+	private Equipement _eq;
+
+	BehaviorExtension(BehaviorSoldier s) 
+	{
 	    soldier = s;
 	}
 	
-	BehaviorSoldier parent() {
+	BehaviorSoldier parent() 
+	{
 		return soldier;
 	}
 
-	void reparent(BehaviorSoldier newParent) {
+	void reparent(BehaviorSoldier newParent) 
+	{
 		soldier = newParent;
 	}
 	
 	@Override
-	public String getName() {
+	public String getName() 
+	{
 		return soldier.getName();
 	}
 
 	@Override
-	public float getHealthPoints() {
+	public float getHealthPoints() 
+	{
 		return soldier.getHealthPoints();
 	}
 
 	@Override
-	public boolean alive() {
+	public boolean alive() 
+	{
 		return soldier.alive();
 	}
 
 	@Override
-	public void heal() {
+	public void heal() 
+	{
 		soldier.heal();
 	}
 
 	@Override
-	public float parry(float force) {
+	public float parry(float force) 
+	{
 		return soldier.parry(force);
 	}
 
 	@Override
-	public float strike() {
+	public float strike() 
+	{
 		return soldier.strike();
 	}
-
-
+	
+	public void addEquipement (Equipement eq)
+	{
+		_eq = eq;
+	}
+	
+	public Equipement getEquipement ()
+	{
+		return _eq;
+	}
 }
