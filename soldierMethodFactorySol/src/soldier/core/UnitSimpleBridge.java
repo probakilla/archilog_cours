@@ -1,17 +1,17 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package soldier.core;
 
 import java.util.Iterator;
 
-public abstract class UnitSimple {
+public abstract class UnitSimpleBridge implements UnitSimple{
 
 	private BehaviorSoldier behavior;
 	private String name;
 
-	public UnitSimple(String name, BehaviorSoldier behavior) {
+	public UnitSimpleBridge(String name, BehaviorSoldier behavior) {
 		this.behavior = behavior;
 		this.name = name;
 	}
