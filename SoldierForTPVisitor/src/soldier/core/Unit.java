@@ -1,10 +1,12 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package soldier.core;
 
 import java.util.Iterator;
+
+import visitor.IVisitor;
  
 public interface Unit {
 	/**
@@ -38,4 +40,8 @@ public interface Unit {
 	void removeObserver(UnitObserver ob);
 	void notifyObservers();
 	
+	/**
+	 * Visitor methods
+	 */
+	void accept (IVisitor visitor);
 }

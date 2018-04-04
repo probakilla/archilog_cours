@@ -1,6 +1,6 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package test;
 
@@ -9,6 +9,8 @@ import soldier.ages.AgeMiddleFactory;
 import soldier.core.AgeAbstractFactory;
 import soldier.core.Unit;
 import soldier.core.UnitGroup;
+import visitor.IVisitor;
+import visitor.VisitorCount;
 
 public class MainFightTwoAges {
 
@@ -50,6 +52,11 @@ public class MainFightTwoAges {
 			System.out.println(team2.getName() + " attack with force : " + st2);
 			team1.parry(st2);
 		}
+		
+		VisitorCount visitor = new VisitorCount ();
+		team1.accept(visitor);
+		System.out.println(visitor.getCount());
+		
 		System.out.println("The end ... " + (team1.alive() ? team1.getName() : team2.getName()) + " won." );
 	}
 

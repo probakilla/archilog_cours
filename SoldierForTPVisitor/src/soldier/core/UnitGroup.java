@@ -1,6 +1,6 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package soldier.core;
 
@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
+import visitor.IVisitor;
 
 public class UnitGroup extends UnitObservableAbstract {
 
@@ -141,5 +142,10 @@ public class UnitGroup extends UnitObservableAbstract {
 				.removeEquipment(w)) {
 		}
 	}
- 
+	@Override
+	public void accept (IVisitor visitor)
+	{
+		visitor.visit(this);
+	}
+
 }

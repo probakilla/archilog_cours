@@ -1,6 +1,6 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package soldier.units;
 
@@ -23,5 +23,5 @@ public class UnitBikerMan extends UnitRider {
 			throw new EquipmentException();
 		super.addEquipment(w);
 	}
-
+	
 }

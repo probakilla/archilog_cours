@@ -1,13 +1,20 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Université Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
  */
 package soldier.core;
 
-public abstract class UnitRider extends UnitSimple {
+import visitor.IVisitor;
 
+public abstract class UnitRider extends UnitSimple {
+	
 	public UnitRider(String name, BehaviorSoldier behavior) {
 		super(name, behavior);
 	}
-
+	
+	@Override
+	public void accept (IVisitor visitor)
+	{
+		visitor.visit(this);
+	}
 }
