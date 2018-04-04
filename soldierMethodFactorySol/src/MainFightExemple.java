@@ -5,6 +5,7 @@
 
 
 import soldier.core.Army;
+import soldier.core.Equipment;
 import soldier.core.UnitSimple;
 import soldier.equipment.EquipmentTrumpet;
 import soldier.equipment.WeaponShield;
@@ -22,19 +23,30 @@ public class MainFightExemple
 		UnitSimple im = new UnitCenturion("La Fritte");
 		UnitSimple gr1 = new Army ("Jacky La Fritte");
 		if (gr1 instanceof Army)
-			gr1 = (Army) gr1;
-		gr1.add);(hm);
-		gr1.add(im);
-		Unit hm2 = new UnitCenturion();
-		Unit im2 = new UnitHorseMan();
-		Unit gr2 = new Army();
-		gr2.add(hm2);
-		gr2.add(im2);
-		Unit gr3 = new Army();
-		gr3.add(gr1);
-		gr3.add(gr2);
+		{
+			((Army)gr1).addComponent (hm);
+			((Army)gr1).addComponent (im);
+		}
+		UnitSimple hm2 = new UnitCenturion("Bob");
+		UnitSimple im2 = new UnitHorseMan("Billy");
+		UnitSimple gr2 = new Army("José");
+		if (gr2 instanceof Army)
+		{
+			((Army)gr2).addComponent(hm2);
+			((Army)gr2).addComponent(im2);
+		}
+		UnitSimple gr3 = new Army("Jaqueline");
+		UnitSimple hm3 = new UnitCenturion ("Robert");
+		UnitSimple im3 = new UnitHorseMan ("Swagg_man");
+		if (gr3 instanceof Army)
+		{
+			((Army)gr3).addComponent(hm3);
+			((Army)gr3).addComponent(im3);
+		}
 		Equipment shield = new WeaponShield();
 		gr3.addEquipment(shield);
-		System.out.println("la force de frappe de l'armée " + gr3.getName + " est de : " + gr3.strike());
+		System.out.println("la force de frappe de l'armée " +
+							gr3.getName() + " est de : " + 
+							gr3.strike());
 	}
 }
